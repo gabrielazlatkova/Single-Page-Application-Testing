@@ -1,0 +1,16 @@
+<div class="card m-md-4">
+  <div class="card-body col-sm-10">
+    <h5 class="card-title text-center font-color" id="cardTitle">{{course.title}}</h5>
+    <p class="card-text font-color1" id="card-description">{{course.description}}</p>
+    <img src="{{course.image}}">
+
+    <button class=" btn btn-outline-warning" id="addToFavouriteBtn"
+            (click)="markAsFavourite()">Mark as favourite</button>
+    <a class="btn btn-outline-success m-lg-2"
+       [routerLink]="['/courses','edit',course.id]"
+    >Edit</a>
+    <button id="deleteBtn" class="btn btn-outline-danger m-lg-2l- courseItemDelete"
+            (click)="courseDeleted.emit(course.id)">Delete</button>
+
+  </div>
+</div>

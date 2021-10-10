@@ -1,0 +1,66 @@
+<h1 id="createEditTitle" class="text-center mt-4 mb-4 font-color1">
+  {{course.id ? 'Update': 'Create'}}
+</h1>
+<a class="previous round ml-2" routerLink="/courses">&#8249;</a>
+<div class="container">
+<form  *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="col-sm-4">
+  <h3 class="font-color">Add new Course</h3>
+
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control"
+           id="title"
+           formControlName="title"
+           placeholder="Enter title">
+
+    <small *ngIf="formGroup.get('title').touched && formGroup.get('title').invalid && formGroup.get('title').errors?.required" class="text-danger error-required">This field is required</small>
+    <small *ngIf="formGroup.get('title').touched && formGroup.get('title').invalid && formGroup.get('title').errors?.minlength" class="text-danger error-minlength">
+      This field should contain at least {{formGroup.get('title').errors.minlength.requiredLength}} characters
+      Currently they are {{formGroup.get('title').errors.minlength.actualLength}}
+    </small>
+  </div>
+
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control"
+           id="description"
+           formControlName="description"
+           required
+           placeholder="Enter description">
+
+    <small *ngIf="formGroup.get('description').touched && formGroup.get('description').invalid && formGroup.get('description').errors?.required" class="text-danger">This field is required</small>
+  </div>
+
+
+  <div class="form-group">
+    <label >Image</label>
+    <input type="file"
+           class="form-control" (change)="insertImage($event)"
+           id="imageUpload"
+           >
+
+<!--           formControlName="image" name="image"-->
+
+
+  </div>
+<!--  <div class="card" style="width: 18rem;">-->
+    <img [src]="imageFile" id="imgFile">
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">{{uf.title.value}}</h5>-->
+<!--      <p class="card-text">{{uf.description.value}}</p>-->
+<!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <button type="submit"
+          class="container btn-grad"
+          id="addUpdateBtn"
+          data-mdb-toggle="button"
+          autocomplete="off"
+          [disabled]="formGroup.invalid">{{course.id? 'Update': 'Add'}}</button>
+
+<!--<a class="previous round ml-2" routerLink="/courses">&#8249;</a>-->
+</form>
+</div>

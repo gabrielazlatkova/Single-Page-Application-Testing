@@ -1,0 +1,9 @@
+<h1 id="wrapperTitle" class="text-center mt-4 mb-4 font-color">Our Courses</h1>
+<div class="mb-4">
+  <a routerLink="/courses/create" id="createRouter" class="m-lg-4 font-color">Add new course</a>
+</div>
+
+<app-course-list id="course-list"
+                 [courses]="courses"
+                 (courseDeleted)="onCourseDeleted($event)"
+                     ></app-course-list>

@@ -1,0 +1,45 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //min-height: 120vh;
+}
+.font-color{
+  color:lightpink;
+}
+.font-color1{
+  color: #ffa9b8;
+  font-family: "Comic Sans MS";
+}
+
+.btn-grad {background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%)}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  //background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+.round {
+  border-radius: 50%;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}

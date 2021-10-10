@@ -1,0 +1,13 @@
+<p *ngIf="selectedCourse">
+  Your favourite course is:{{selectedCourse?.title}}
+</p>
+
+<div class="row">
+  <div class="col-md-5" *ngFor="let course of courses">
+    <app-course-item id="courseItem" [course]="course"
+                     (courseClicked)="onCourseClicked($event)"
+                     (courseDeleted)="courseDeleted.emit($event)"
+    ></app-course-item>
+  </div>
+</div>
+
